@@ -1,0 +1,26 @@
+Acme\RecommendBundle\Entity\Categories:
+    type: entity
+    table: categories
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        parentIdCategory:
+            type: integer
+            nullable: true
+            unsigned: true
+            comment: ''
+            column: parent_id_category
+    lifecycleCallbacks: {  }

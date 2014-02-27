@@ -1,0 +1,39 @@
+Acme\RecommendBundle\Entity\UserCategories:
+    type: entity
+    table: user_categories
+    indexes:
+        fk_user_categories_categories1_idx:
+            columns:
+                - id_category
+        fk_user_categories_users1_idx:
+            columns:
+                - id_user
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        idCategory:
+            targetEntity: Categories
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_category:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idUser:
+            targetEntity: Users
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_user:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

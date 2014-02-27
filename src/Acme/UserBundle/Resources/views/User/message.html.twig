@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+
+ {% block body %}
+<div id="message-details">
+<table id="message">
+  <tr>
+  {% for rows in messages %}
+    {% if loop.index ==1 %}
+      {% for key in rows|keys %}
+        <td>{{ key }}</td>
+      {% endfor %}
+    {%endif%}
+  {% endfor %}
+  </tr>
+  
+  {% for rows in messages %}
+    <tr>
+    {% for msg in rows %}
+      <td><a href="" class="msg-details" style="cursor: pointer;">
+      {% if msg.timestamp is defined %}
+        {{ msg|date('m/d/Y') }}
+      {% else %}
+        {{ msg }}
+      {% endif %}
+      </a></td>
+    {% endfor %}
+    </tr>
+  {% endfor %}
+  
+</table>
+</div>
+
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+<script>
+    $('.msg-details').click(function(e){
+        e.preventDefault();
+        messageDetails( '{{ path('acme_user_message_details') }}' );
+    });
+</script>
+{% endblock %}

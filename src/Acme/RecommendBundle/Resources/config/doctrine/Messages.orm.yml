@@ -1,0 +1,56 @@
+Acme\RecommendBundle\Entity\Messages:
+    type: entity
+    table: messages
+    indexes:
+        fk_messages_users1_idx:
+            columns:
+                - id_sender
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        idReceiver:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            column: id_receiver
+        title:
+            type: string
+            nullable: false
+            length: 250
+            fixed: false
+            comment: ''
+        dateSend:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: date_send
+        dateReceive:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: date_receive
+        content:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+    manyToOne:
+        idSender:
+            targetEntity: Users
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_sender:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
