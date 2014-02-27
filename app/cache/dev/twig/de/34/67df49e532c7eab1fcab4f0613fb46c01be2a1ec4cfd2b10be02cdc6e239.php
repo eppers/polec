@@ -11,7 +11,6 @@ class __TwigTemplate_de3467df49e532c7eab1fcab4f0613fb46c01be2a1ec4cfd2b10be02cdc
 
         $this->blocks = array(
             'body' => array($this, 'block_body'),
-            'javascripts' => array($this, 'block_javascripts'),
         );
     }
 
@@ -30,7 +29,7 @@ class __TwigTemplate_de3467df49e532c7eab1fcab4f0613fb46c01be2a1ec4cfd2b10be02cdc
     {
         // line 4
         echo "
-<table id=\"message\">
+<table>
   <tr>
   ";
         // line 7
@@ -100,7 +99,7 @@ class __TwigTemplate_de3467df49e532c7eab1fcab4f0613fb46c01be2a1ec4cfd2b10be02cdc
             $context['_seq'] = twig_ensure_traversable((isset($context["rows"]) ? $context["rows"] : $this->getContext($context, "rows")));
             foreach ($context['_seq'] as $context["_key"] => $context["msg"]) {
                 // line 19
-                echo "      <td><a href=\"\" class=\"msg-details\" style=\"cursor: pointer;\">
+                echo "      <td>
       ";
                 // line 20
                 if ($this->getAttribute((isset($context["msg"]) ? $context["msg"] : null), "timestamp", array(), "any", true, true)) {
@@ -117,7 +116,7 @@ class __TwigTemplate_de3467df49e532c7eab1fcab4f0613fb46c01be2a1ec4cfd2b10be02cdc
       ";
                 }
                 // line 25
-                echo "      </a></td>
+                echo "      </td>
     ";
             }
             $_parent = $context['_parent'];
@@ -133,27 +132,7 @@ class __TwigTemplate_de3467df49e532c7eab1fcab4f0613fb46c01be2a1ec4cfd2b10be02cdc
         // line 29
         echo "  
 </table>
-
-";
-    }
-
-    // line 33
-    public function block_javascripts($context, array $blocks = array())
-    {
-        // line 34
-        $this->displayParentBlock("javascripts", $context, $blocks);
-        echo "
-<script>
-    \$('.msg-details').click(function(e){
-        alert('test');
-        e.preventDefault();
-        messageDetails( '";
-        // line 39
-        echo $this->env->getExtension('routing')->getPath("acme_user_message_details");
-        echo "' );
-    });
-</script>
-";
+ ";
     }
 
     public function getTemplateName()
@@ -168,6 +147,6 @@ class __TwigTemplate_de3467df49e532c7eab1fcab4f0613fb46c01be2a1ec4cfd2b10be02cdc
 
     public function getDebugInfo()
     {
-        return array (  152 => 39,  144 => 34,  141 => 33,  134 => 29,  127 => 27,  120 => 25,  114 => 23,  108 => 21,  106 => 20,  103 => 19,  99 => 18,  96 => 17,  92 => 16,  88 => 14,  74 => 13,  71 => 12,  62 => 10,  57 => 9,  54 => 8,  37 => 7,  32 => 4,  29 => 3,);
+        return array (  133 => 29,  126 => 27,  119 => 25,  113 => 23,  107 => 21,  105 => 20,  102 => 19,  98 => 18,  95 => 17,  91 => 16,  87 => 14,  73 => 13,  70 => 12,  61 => 10,  56 => 9,  53 => 8,  36 => 7,  31 => 4,  28 => 3,);
     }
 }

@@ -40,19 +40,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/js/d80a17c')) {
-            // _assetic_d80a17c
-            if ($pathinfo === '/js/d80a17c.js') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'd80a17c',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_d80a17c',);
-            }
-
-            // _assetic_d80a17c_0
-            if ($pathinfo === '/js/d80a17c_part_2_scripts.jquery_1.js') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'd80a17c',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_d80a17c_0',);
-            }
-
-        }
-
         if (0 === strpos($pathinfo, '/_')) {
             // _wdt
             if (0 === strpos($pathinfo, '/_wdt') && preg_match('#^/_wdt/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
@@ -167,18 +154,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_user_homepage')), array (  '_controller' => 'Acme\\UserBundle\\Controller\\UserController::indexAction',));
             }
 
-            if (0 === strpos($pathinfo, '/user/message')) {
-                // acme_user_message_all
-                if ($pathinfo === '/user/message/all') {
-                    return array (  '_controller' => 'Acme\\UserBundle\\Controller\\UserController::messageAction',  '_route' => 'acme_user_message_all',);
+            // acme_user_message
+            if ($pathinfo === '/user/message/details') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_acme_user_message;
                 }
 
-                // acme_user_message_details
-                if ($pathinfo === '/user/message/details') {
-                    return array (  '_controller' => 'Acme\\UserBundle\\Controller\\UserController::messageDetailsAction',  '_route' => 'acme_user_message_details',);
-                }
-
+                return array (  '_controller' => 'Acme\\UserBundle\\Controller\\UserController::messageDetailsAction',  '_route' => 'acme_user_message',);
             }
+            not_acme_user_message:
 
         }
 
