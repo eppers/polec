@@ -103,14 +103,17 @@ class UserController extends Controller
         $form = json_decode('{"receiver":"1","title":"Re: testMsg1","content":"\r\n\r\ntestMsg Content"}',true);
         //parse_str($request->get("form"),$form);
         
+        $em = $this->getDoctrine()->getManager();
+        
         $message = new Messages();
-        $message->setIdSender(1);#TODO id z sesji
         $message->setIdReceiver($form['receiver']);
         $message->setTitle($form['title']);
         $message->setContent($form['content']);
-        $message->setDateSend(date('Y-m-d H:i:s'));
+        $message->setDateSend(date_create(date('Y-m-d H:i:s')));
         
-        $em = $this->getDoctrine()->getManager();
+        $sender = $em->getRepository('AcmeRecommendBundle:Users')->findOneById(1);
+        $message->setIdSender($sender);
+        
         $em->persist($message);
         $em->flush();
     

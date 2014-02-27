@@ -16,3 +16,5 @@
 /app/config/config_test.yml
 /app/config/parameters.yml.dist
 /app/config/parameters.yml
+/app/logs/
+/app/cache/

@@ -40,7 +40,7 @@ class Messages
     private $content;
 
     /**
-     * @var integer
+     * @var \Acme\RecommendBundle\Entity\Users
      */
     private $idSender;
 
@@ -173,10 +173,10 @@ class Messages
     /**
      * Set idSender
      *
-     * @param integer $idSender
+     * @param \Acme\RecommendBundle\Entity\Users $idSender
      * @return Messages
      */
-    public function setIdSender($idSender)
+    public function setIdSender(\Acme\RecommendBundle\Entity\Users $idSender = null)
     {
         $this->idSender = $idSender;
 
@@ -186,7 +186,7 @@ class Messages
     /**
      * Get idSender
      *
-     * @return integer
+     * @return \Acme\RecommendBundle\Entity\Users 
      */
     public function getIdSender()
     {
