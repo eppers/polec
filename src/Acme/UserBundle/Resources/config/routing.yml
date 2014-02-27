@@ -1,0 +1,16 @@
+acme_user_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AcmeUserBundle:User:index }
+
+acme_user_message_all:
+  pattern: /message/all
+  defaults: { _controller: AcmeUserBundle:User:message }
+
+  
+acme_user_message_details:
+  pattern: /message/details
+  defaults: { _controller: AcmeUserBundle:User:messageDetails }
+
+acme_user_message_response:
+  pattern: /message/response
+  defaults: { _controller: AcmeUserBundle:User:messageResponse }

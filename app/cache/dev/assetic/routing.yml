@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /home/petre/domains/petre.pl/public_html/polec/app/config/routing_dev.yml

@@ -1,0 +1,68 @@
+Acme\RecommendBundle\Entity\Users:
+    type: entity
+    table: users
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        fbProfId:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            column: fb_prof_id
+        name:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        lname:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        email:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        local:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        zip:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        geolat:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 6
+            comment: ''
+        geolng:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 6
+            comment: ''
+        userCategoriesIdUserDetail:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            column: user_categories_id_user_detail
+    lifecycleCallbacks: {  }

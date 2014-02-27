@@ -1,0 +1,32 @@
+<div style="width: 610px; display: block;">
+    <div id="profil-info" style="width: 200px; vertical-align: top; display:inline-block; margin:0; padding:0; border: 1px solid #000;">
+        <div id="profil-photo" style="height: 250px; width: 200px; background: red;">
+        </div>
+        <div id="profil-name">
+            {{sender.name}} {{sender.lname}}
+        </div>
+    </div>
+    <form id="msg-details-form">
+        <input type="hidden" name="receiver" value="{{sender.id}}">
+        <div id="message-container" style="display:inline-block; width: 400px; margin:0; padding:0;">
+            <div id="message-title">
+                <label for="msg-title">Tytuł:</label> <input id="msg-title" value="{{msg.title}}" name="title" readonly>
+            </div>
+            <div id="message-content">
+                <label for="msg-content">Wiadomość :</label>
+                <textarea style="border: 1px solid #000; display:block; width: 100%;" id="msg-content" name="content" type="text" readonly>{{msg.content}}</textarea>
+            </div>
+            <button id="msg-response">Odpowiedz</button>    
+        </div>
+    </form>
+</div>  
+
+
+<script>
+    $(document.body).on('click','#msg-send',function(e) {
+        e.preventDefault();
+        messageReply( '{{ path('acme_user_message_response') }}', $('#msg-details-form').serialize() );
+    });
+</script>
+
+

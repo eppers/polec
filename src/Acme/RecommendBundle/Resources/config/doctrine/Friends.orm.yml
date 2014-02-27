@@ -1,0 +1,40 @@
+Acme\RecommendBundle\Entity\Friends:
+    type: entity
+    table: friends
+    indexes:
+        fk_friends_users1_idx:
+            columns:
+                - users_id_user
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        idUser:
+            type: integer
+            nullable: true
+            unsigned: true
+            comment: ''
+            column: id_user
+        fbProfId:
+            type: bigint
+            nullable: true
+            unsigned: true
+            comment: ''
+            column: fb_prof_id
+    manyToOne:
+        usersUser:
+            targetEntity: Users
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                users_id_user:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

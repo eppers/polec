@@ -1,0 +1,17 @@
+table {
+  border:1px solid #000;
+}
+table td{
+  border:1px solid #000;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+form {
+    display: inline-block;
+    width: 400px;
+}
+
+textarea {
+    height: 250px;
+}

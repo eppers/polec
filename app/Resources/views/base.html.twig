@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        {% stylesheets 'bundles/acmeuser/css/*' filter='cssrewrite' %}
+          <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        {% endblock %}
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+           <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        {% block javascripts %}
+          {% javascripts
+            'bundles/acmerecommend/js/*'
+            'bundles/acmeuser/js/*' %}
+            <script src="{{ asset_url }}"></script>
+          {% endjavascripts %}
+        {% endblock %}        
+    </body>
+</html>
