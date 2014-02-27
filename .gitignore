@@ -1,4 +1,3 @@
-/app/config/
 /vendor/
 /UPGRADE-2.4.md
 /UPGRADE-2.3.md
@@ -10,3 +9,10 @@
 /LICENSE
 !/app/config/routing_dev.yml
 !/app/config/routing.yml
+/app/config/config_prod.yml
+/app/config/security.yml
+/app/config/config.yml
+/app/config/config_dev.yml
+/app/config/config_test.yml
+/app/config/parameters.yml.dist
+/app/config/parameters.yml
