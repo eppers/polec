@@ -1,0 +1,19 @@
+$('.msg-details').click(function(e){
+    alert('test');
+    e.preventDefault();
+var jqxhr = $.post( "/user/message/details", {id : '1'},function(data) {
+  alert( "success" );
+  console.log(data);
+},"json")
+  .done(function(data) {
+    alert( "second success" );
+    console.log(data);
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+    alert( "finished" );
+  });
+  
+});

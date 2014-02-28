@@ -32,19 +32,24 @@ class __TwigTemplate_c20b2e42b64dcc5657ceeca9d28acb013c82cc9d5ee52b0c751ef967f29
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 11
-        echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
+        echo "        
+        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
     </head>
     <body>
         ";
-        // line 14
-        $this->displayBlock('body', $context, $blocks);
         // line 15
-        echo "        ";
-        $this->displayBlock('javascripts', $context, $blocks);
+        $this->displayBlock('body', $context, $blocks);
         // line 16
-        echo "    </body>
+        echo "           <script src=\"http://code.jquery.com/jquery-1.11.0.min.js\"></script>
+        ";
+        // line 17
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 23
+        echo "        
+    </body>
 </html>
 ";
     }
@@ -81,14 +86,35 @@ class __TwigTemplate_c20b2e42b64dcc5657ceeca9d28acb013c82cc9d5ee52b0c751ef967f29
         echo "        ";
     }
 
-    // line 14
+    // line 15
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 15
+    // line 17
     public function block_javascripts($context, array $blocks = array())
     {
+        // line 18
+        echo "          ";
+        if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
+            // asset "d80a17c_0"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_d80a17c_0") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/d80a17c_part_2_scripts.jquery_1.js");
+            // line 21
+            echo "            <script src=\"";
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
+            echo "\"></script>
+          ";
+        } else {
+            // asset "d80a17c"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_d80a17c") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/d80a17c.js");
+            echo "            <script src=\"";
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
+            echo "\"></script>
+          ";
+        }
+        unset($context["asset_url"]);
+        // line 23
+        echo "        ";
     }
 
     public function getTemplateName()
@@ -103,6 +129,6 @@ class __TwigTemplate_c20b2e42b64dcc5657ceeca9d28acb013c82cc9d5ee52b0c751ef967f29
 
     public function getDebugInfo()
     {
-        return array (  90 => 15,  85 => 14,  81 => 10,  67 => 8,  62 => 7,  59 => 6,  53 => 5,  47 => 16,  44 => 15,  42 => 14,  35 => 11,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  117 => 23,  103 => 21,  98 => 18,  95 => 17,  90 => 15,  86 => 10,  72 => 8,  67 => 7,  64 => 6,  58 => 5,  51 => 23,  49 => 17,  46 => 16,  44 => 15,  38 => 12,  35 => 11,  33 => 6,  29 => 5,  23 => 1,);
     }
 }

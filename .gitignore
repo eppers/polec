@@ -1,10 +1,11 @@
 /vendor/
+/UPGRADE-2.4.md
+/UPGRADE-2.3.md
+/README.md
 /composer.lock
 /composer.json
 /UPGRADE.md
 /UPGRADE-2.2.md
-/UPGRADE-2.4.md
-/README.md
 /LICENSE
 /UPGRADE-2.3.md
 /app/cache/
