@@ -7,3 +7,5 @@
 /README.md
 /LICENSE
 /UPGRADE-2.3.md
+/app/cache/
+/app/logs/
