@@ -10,3 +10,8 @@
 /UPGRADE-2.3.md
 /app/cache/
 /app/logs/
+/app/config/
+!/app/config/routing.yml
+!/app/config/routing_dev.yml
+!/app/config/config_dev.yml
+/nbproject/

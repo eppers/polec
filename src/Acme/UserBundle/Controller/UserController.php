@@ -47,7 +47,7 @@ class UserController extends Controller
             
             if (!$messages) {
               throw $this->createNotFoundException(
-               'Brak wiadomoÅ›ci'
+               'Brak wiadomoœci'
               );
             };
             
@@ -117,7 +117,7 @@ class UserController extends Controller
         $em->persist($message);
         $em->flush();
     
-        return new Response(json_encode($form));     
+        return new Response(json_encode($form));     //dodaje coment
         //return $this->render('AcmeUserBundle:User:message_response.html.twig', array('title' => $form['title'], 'content' => $form['content']));
     }
 }
